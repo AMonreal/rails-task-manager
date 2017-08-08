@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content-container">
+   <h1>Tasks list</h1>
+   <%= link_to "new", new_task_path, class: 'btn-treehouse' %>
+   <ul class="list-elements">
+    <% @tasks.each do |task| %>
+    <li>
+      <%= link_to task.name, task_path(task.id), class: 'task-name' %>
+      <%= link_to "edit", edit_task_path(task.id), class: 'btn-medium' %>
+      <%= link_to 'delete', task_path(task), method: :delete, class: 'btn-medium' %>
+    </li>
+    <% end %>
+  </ul>
+</div>
+</div>
